@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="tz" uri="WEB-INF/tld/tz.tld" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +13,9 @@
 </style>
 </head>
 <body>
-	
+		<c:forEach varStatus="eindex" var="exam" items="${userInfo}">
+			<div>${tz:character(eindex.count)}:${exam.department.departmentName}</div>
+		</c:forEach>
 	
 	
 	
